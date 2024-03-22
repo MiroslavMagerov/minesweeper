@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="images/Minesweeper_2005.png">
+    <script defer src="scripts/login.js"></script>
+</head>
+
+<body onload="init()" class="green">
+    <main>
+        <form action="index.html" id="signUp">
+            <fieldset class="purple">
+                <legend><h2>Sign Up</h2></legend>
+                <div id="form-inputs-container">
+                    <div class="input-container">
+                        <input type="text" id="name" name="name" required>
+                        <label for="name">Name</label>
+                    </div>
+    
+                    <div class="input-container">
+                        <input type="text" id="surname" name="surname" required>
+                        <label for="surname">Surname</label>
+                    </div>
+
+                    <div class="input-container">
+                        <input onblur="checkUsername()" type="text" id="username" name="username" required>
+                        <label for="username">Username</label>
+                    </div>
+    
+                    <div class="input-container">
+                        <input onblur="checkAge()" type="date" id="birthdate" name="birthdate" required>
+                        <label for="birthdate">Birth Date</label>
+                    </div>
+    
+                    <div class="input-container">
+                        <input onblur="checkEmail()" type="email" id="email" name="email" required>
+                        <label for="email">Email</label>
+                    </div>
+
+                    <div class="input-container">
+                        <p id="rangeValue">15 x 15</p>
+                        <input type="range" min="5" max="25" value="15" id="dimensionsSlider" oninput="rangeValue.innerText = `${this.value} x ${this.value}`">
+                        <label class="centered-label" for="dimensionsSlider">Size of the board</label>
+                    </div>
+
+                    <div class="input-container">
+                        <p id="bombs">30</p>
+                        <input type="range" min="5" max="55" value="30" id="bombsQuantity" oninput="bombs.innerText = `${this.value}`">
+                        <label class="centered-label" for="bombsQuantity">Amount of bombs</label>
+                    </div>
+
+                    <div class="input-container">
+                        <input class="submit-button" type="submit" value="Sign Up">
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </main>
+</body>
+</html>
